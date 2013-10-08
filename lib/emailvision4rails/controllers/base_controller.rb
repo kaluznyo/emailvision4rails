@@ -22,6 +22,7 @@ module Emailvision4rails
 			protected
 
 			def method_missing(method, *args)
+        puts "EmailVision4Rails::BaseController#method_missing"
 				return super unless respond_to?(method)
 				instance = new(method, *args)
 				instance.render_views
